@@ -1,0 +1,26 @@
+/* Inndata til Tailwind (v4). `npm run css` bygger src/tailwind.generated.css (importeres i main.tsx).
+   Tailwind ligger dermed i selve appen i stedet for å lastes fra en CDN – nødvendig for APK/PWA uten nett. */
+@import "tailwindcss";
+@source "./**/*.{ts,tsx}";
+@source "../index.html";
+
+/* V2-palett: «emerald» brukes overalt som aksentfarge og er derfor byttet ut med neon-cyan/elektrisk blå.
+   Slate-bakgrunnene er trukket mot dyp blåsvart (#030712). Par/suksess bruker uendret grønn (green-*). */
+@theme {
+  --color-emerald-50: #ecfeff;
+  --color-emerald-100: #cffafe;
+  --color-emerald-200: #a5f3fc;
+  --color-emerald-300: #67e8f9;
+  --color-emerald-400: #22d3ee;
+  --color-emerald-500: #0ea5e9;
+  --color-emerald-600: #0284c7;
+  --color-emerald-700: #0369a1;
+  --color-emerald-800: #075985;
+  --color-emerald-900: #0c4a6e;
+  --color-emerald-950: #06243d;
+
+  --color-slate-950: #030712;
+  --color-slate-900: #0a1226;
+  --color-slate-800: #14203a;
+  --color-slate-700: #1f2f52;
+}

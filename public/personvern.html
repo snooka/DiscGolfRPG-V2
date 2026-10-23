@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Personvernerklæring – Disc Golf RPG</title>
+<style>
+  body{font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;max-width:42rem;margin:0 auto;padding:1.25rem;background:#020617;color:#e2e8f0}
+  h1{font-size:1.6rem} h2{font-size:1.1rem;margin-top:1.6rem;color:#6ee7b7} a{color:#6ee7b7} li{margin:.25rem 0}
+  .note{background:#1e293b;border-radius:.75rem;padding:.75rem 1rem;font-size:.9rem}
+</style>
+</head>
+<body>
+<h1>Personvernerklæring for Disc Golf RPG</h1>
+<p>Sist oppdatert: 20. oktober 2026</p>
+<p class="note"><strong>Behandlingsansvarlig:</strong> [FYLL INN: ditt navn / firma] – kontakt: [FYLL INN: e-postadresse]</p>
+
+<h2>Hva vi lagrer</h2>
+<ul>
+  <li><strong>Konto:</strong> e-postadresse og passord (passordet lagres kryptert av Supabase, aldri i klartekst) og valgt brukernavn.</li>
+  <li><strong>Spillerdata:</strong> runder, resultater, statistikk, XP, nivå, titler, achievements, diskbag, grupper og venner. Dette lagres i skyen slik at du ikke mister noe når appen oppdateres eller du bytter telefon.</li>
+  <li><strong>Offentlig profil:</strong> brukernavn, XP og tittel vises for andre spillere (topplisten og vennesøk).</li>
+  <li><strong>Delte runder:</strong> runder du spiller sammen med venner lagres slik at alle i runden ser den live.</li>
+</ul>
+
+<h2>Posisjon</h2>
+<ul>
+  <li>Appen ber om posisjon først etter at den har forklart hvorfor, og bare hvis du trykker «Tillat».</li>
+  <li>Posisjonen brukes <strong>kun mens appen er åpen</strong> til å vise vær, finne diskgolfbanen du står på og bekrefte at en runde er spilt på banen. Vi sporer deg ikke i bakgrunnen.</li>
+  <li>Posisjonen din lagres ikke i profilen din. For vær sendes en grov posisjon (ca. 1 km) til Meteorologisk institutt (api.met.no / Yr). Hvis du spiller en «fri runde» som deles med venner, lagres et grovt startpunkt for runden.</li>
+  <li>Du kan nekte posisjon og i stedet velge sted manuelt. Hvis du søker etter et sted på nett, sendes søketeksten til OpenStreetMap (Nominatim).</li>
+  <li>Du kan når som helst skru av posisjon i telefonens innstillinger.</li>
+</ul>
+
+<h2>Hvem behandler dataene</h2>
+<ul>
+  <li><strong>Supabase</strong> – database og innlogging (databehandler).</li>
+  <li><strong>Meteorologisk institutt</strong> – værdata (får bare grov posisjon).</li>
+  <li><strong>OpenStreetMap Nominatim</strong> – kun hvis du bruker stedssøk.</li>
+</ul>
+<p>Vi selger ikke data og viser ingen reklame.</p>
+
+<h2>Dine rettigheter</h2>
+<ul>
+  <li><strong>Sletting:</strong> i appen under Profil → «Slett kontoen min» slettes kontoen og alle tilhørende data for alltid.</li>
+  <li>Du kan be om innsyn i og retting av opplysningene dine ved å kontakte oss på e-postadressen over.</li>
+  <li>Du kan klage til Datatilsynet (datatilsynet.no).</li>
+</ul>
+
+<h2>Sikkerhetskopier</h2>
+<p>For å kunne gjenopprette data ved feil tas det automatisk sikkerhetskopier av profildata. De slettes sammen med kontoen.</p>
+</body>
+</html>

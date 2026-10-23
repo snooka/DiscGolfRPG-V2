@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+<defs>
+<radialGradient id="bg" cx="0.3" cy="0.2" r="0.85"><stop offset="0" stop-color="#0b2a4a"/><stop offset="0.75" stop-color="#030712"/></radialGradient>
+<linearGradient id="c" x1="6" y1="50" x2="46" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.15"/><stop offset="0.6" stop-color="#38bdf8"/><stop offset="1" stop-color="#a5f3fc"/></linearGradient>
+<radialGradient id="d" cx="0.35" cy="0.3" r="0.9"><stop offset="0" stop-color="#ecfeff"/><stop offset="0.5" stop-color="#22d3ee"/><stop offset="1" stop-color="#2563eb"/></radialGradient>
+<filter id="g" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="64" height="64" rx="14" fill="url(#bg)"/>
+<rect x="1" y="1" width="62" height="62" rx="13" stroke="#67e8f9" stroke-opacity="0.55" stroke-width="1.5"/>
+<path d="M7 50 C 16 52, 26 44, 31 33 S 42 19, 47 20" stroke="url(#c)" stroke-width="3.2" stroke-linecap="round" filter="url(#g)"/>
+<path d="M52 27 V52" stroke="#67e8f9" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+<path d="M47 27 H57 L55 35 H49 Z" stroke="#67e8f9" stroke-width="1.8" stroke-linejoin="round" opacity="0.9"/>
+<path d="M46 55 H58" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+<g filter="url(#g)" transform="rotate(-18 40 18)"><ellipse cx="40" cy="18" rx="10" ry="3.8" fill="url(#d)"/><ellipse cx="40" cy="17.2" rx="6" ry="1.6" fill="#ecfeff" opacity="0.55"/></g>
+</svg>
