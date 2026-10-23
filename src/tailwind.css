@@ -10,14 +10,28 @@
   --color-emerald-50: #ecfeff;
   --color-emerald-100: #cffafe;
   --color-emerald-200: #a5f3fc;
-  --color-emerald-300: #67e8f9;
-  --color-emerald-400: #22d3ee;
   --color-emerald-500: #0ea5e9;
   --color-emerald-600: #0284c7;
   --color-emerald-700: #0369a1;
   --color-emerald-800: #075985;
   --color-emerald-900: #0c4a6e;
   --color-emerald-950: #06243d;
+
+  /* Sekundærtekst: isblå/lys gråblå i stedet for mørk grå (bedre lesbarhet i sol) */
+  --color-slate-100: #f1f7ff;
+  --color-slate-200: #e1edfb;
+  --color-slate-300: #cfe0f5;
+  --color-slate-400: #b3cbe8;
+  --color-slate-500: #94b2d6;
+  --color-slate-600: #6d8fb8;
+
+  /* Neon-aksenter */
+  --color-cyan-300: #7ff3ff;
+  --color-cyan-400: #1fe3ff;
+  --color-cyan-500: #06c4e6;
+  --color-teal-300: #6af7d6;
+  --color-emerald-300: #8af4ff;
+  --color-emerald-400: #1fe3ff;
 
   --color-slate-950: #030712;
   --color-slate-900: #0a1226;

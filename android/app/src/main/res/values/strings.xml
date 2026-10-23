@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Disc Golf RPG</string>
+    <string name="title_activity_main">Disc Golf RPG</string>
+    <string name="package_name">com.kim.discgolfrpg</string>
+    <string name="custom_url_scheme">com.kim.discgolfrpg</string>
+</resources>

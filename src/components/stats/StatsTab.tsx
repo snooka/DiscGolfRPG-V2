@@ -76,9 +76,9 @@ function AllModesView({ onPick }: { onPick: (view: View) => void }) {
       <section className="grid grid-cols-2 gap-2" aria-label={t('Totalt')}>
         <Tile label={t('Runder totalt')} value={String(totals.rounds)} tone="text-emerald-400" />
         <Tile label={t('Hull spilt')} value={String(totals.holes)} tone="text-cyan-400" />
-        <Tile label={t(t('Disker kastet'))} value={String(totals.discsThrown)} tone="text-amber-400" />
-        <Tile label={t('Gått')} value={`${stats.totalKm} km`} tone="text-fuchsia-300" />
-        <Tile label={t('Putts totalt')} value={String(stats.modes.putter.putts)} tone="text-pink-300" />
+        <Tile label={t(t('Disker kastet'))} value={String(totals.discsThrown)} tone="text-teal-300" />
+        <Tile label={t('Gått')} value={`${stats.totalKm} km`} tone="text-cyan-300" />
+        <Tile label={t('Putts totalt')} value={String(stats.modes.putter.putts)} tone="text-teal-300" />
       </section>
 
       <section className="card space-y-3">
@@ -193,9 +193,9 @@ function ModeView({
             <Tile
               label={mode === 'dual_tee' ? t('Disker kastet') : t('Kast')}
               value={String(stats.discsThrown)}
-              tone="text-amber-400"
+              tone="text-teal-300"
             />
-            <Tile label={t('XP fra modus')} value={String(stats.xpEarned)} tone="text-fuchsia-300" />
+            <Tile label={t('XP fra modus')} value={String(stats.xpEarned)} tone="text-cyan-300" />
             <Tile
               label={t('Beste runde')}
               value={stats.bestRoundDiff === null ? '–' : formatDiff(stats.bestRoundDiff)}
@@ -228,7 +228,7 @@ function ModeView({
               <h3 className="eyebrow">{t('Hvilket tee-kast valgte du?')}</h3>
               <div className="grid grid-cols-2 gap-2 text-center">
                 <Tile label={t('Kast 1')} value={String(stats.teePicks.first)} tone="text-cyan-400" />
-                <Tile label={t('Kast 2')} value={String(stats.teePicks.second)} tone="text-amber-400" />
+                <Tile label={t('Kast 2')} value={String(stats.teePicks.second)} tone="text-teal-300" />
               </div>
               <p className="text-xs text-slate-400">
                 {teeTotal > 0

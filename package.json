@@ -1,8 +1,8 @@
 {
   "name": "disc-golf-rpg",
   "private": true,
-  "version": "2.2.0",
-  "androidVersionCode": 17,
+  "version": "2.2.1",
+  "androidVersionCode": 18,
   "type": "module",
   "scripts": {
     "dev": "vite --host",

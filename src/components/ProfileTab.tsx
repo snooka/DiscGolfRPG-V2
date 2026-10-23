@@ -112,7 +112,7 @@ export function ProfileTab({ onNavigate }: { onNavigate: (tab: Tab) => void }) {
         <QuickStat
           label={t('Beste (Normal)')}
           value={best === null ? '–' : formatDiff(best)}
-          tone="text-amber-400"
+          tone="text-teal-300"
         />
       </section>
 
