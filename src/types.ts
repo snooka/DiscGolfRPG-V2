@@ -24,15 +24,30 @@ export type ScoreCounts = Record<HoleResult, number>;
 
 // ---------- Baner ----------
 
+
+export interface CourseHole {
+  number: number;
+  par: number;
+  lengthMeters?: number;
+  lat?: number;
+  lng?: number;
+  teeLat?: number;
+  teeLng?: number;
+}
+
 export interface CourseItem {
   id: string;
   name: string;
   location: string;
   holes: number;
   par: number;
+  totalLengthMeters?: number;
   image: string;
   lat: number;
   lng: number;
+  layout?: CourseHole[];
+  isCustom?: boolean;
+  updatedAt?: string;
 }
 
 // ---------- Diskbag ----------

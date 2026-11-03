@@ -1,4 +1,4 @@
-import { KNOWN_COURSES_DB } from '../data/courses.ts';
+import { DEFAULT_HOME_COURSE, KNOWN_COURSES_DB } from '../data/courses.ts';
 import { getDistanceKm } from './geo.ts';
 import { coarse, hasLocationConsent } from './locationStore.ts';
 import type { CourseItem } from '../types.ts';
@@ -9,8 +9,8 @@ export interface GeoPoint {
   lng: number;
 }
 
-/** Hvor nær banen man må stå (km) for å regnes som «på banen». */
-export const ON_COURSE_KM = 0.6;
+/** Hvor nær banen man må stå (km) for å regnes som «på banen». Økt til 1.0 km for god margin på store baner. */
+export const ON_COURSE_KM = 1.0;
 
 export type GeoFailure = 'no-consent' | 'denied' | 'unavailable' | 'timeout' | 'unsupported';
 export type GeoResult = { ok: true; point: GeoPoint } | { ok: false; reason: GeoFailure };
@@ -67,7 +67,7 @@ export interface CourseMatch {
 
 /**
  * Finner banen man står på: nærmeste kjente bane (eller en tidligere spilt
- * bane) innenfor ON_COURSE_KM. Ren funksjon.
+ * bane) innenfor ON_COURSE_KM.
  */
 export function detectCourse(
   pos: GeoPoint,
@@ -75,11 +75,17 @@ export function detectCourse(
   known: CourseItem[] = KNOWN_COURSES_DB
 ): CourseMatch | null {
   const byId = new Map<string, CourseItem>();
-  for (const c of [...known, ...extra]) byId.set(c.id, c);
+  for (const c of [DEFAULT_HOME_COURSE, ...known, ...extra]) {
+    if (c && c.id) byId.set(c.id, c);
+  }
+
   let best: CourseMatch | null = null;
   for (const course of byId.values()) {
+    if (!course.lat || !course.lng) continue;
     const km = getDistanceKm(pos.lat, pos.lng, course.lat, course.lng);
-    if (km <= ON_COURSE_KM && (!best || km < best.km)) best = { course, km };
+    if (km <= ON_COURSE_KM && (!best || km < best.km)) {
+      best = { course, km };
+    }
   }
   return best;
 }
