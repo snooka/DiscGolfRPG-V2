@@ -1,0 +1,29 @@
+name: Auto-oppdater baner fra OpenStreetMap
+
+on:
+  schedule:
+    # Kjører automatisk hver søndag kl. 03:00
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+
+jobs:
+  update-courses:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sjekk ut kildekode
+        uses: actions/checkout@v4
+
+      - name: Sett opp Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer avhengigheter
+        run: npm ci
+
+      - name: Kjør baneskript og oppdater Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: node scripts/fetch-courses.js
