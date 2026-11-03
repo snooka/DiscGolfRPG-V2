@@ -27,7 +27,7 @@ import { useRounds } from './hooks/useRounds.ts';
 import { requestMotionPermission, useStepCounter } from './hooks/useStepCounter.ts';
 import type { RoundConfig } from './lib/round.ts';
 import { t } from './i18n/index.ts';
-
+import { syncCoursesWithCloud } from './lib/courseSync.ts';
 export default function App() {
   return (
     <I18nProvider>
@@ -35,13 +35,19 @@ export default function App() {
     </I18nProvider>
   );
 }
-
 function AppWithLanguage() {
   // Språkbytte: dette treet tegnes på nytt med ny tekst. Selve appen (AppShell) monteres i tillegg
   // på nytt (key), slik at ingenting viser gammel tekst fra useMemo/useState. Innlogging, profil og
   // pågående runde ligger i leverandørene og lagringen og beholdes.
   useI18n();
-  if (!isCloudConfigured()) return <ConfigMissingScreen />;
+
+  useEffect(() => {
+    syncCoursesWithCloud().catch((err) => {
+      console.warn('Kunne ikke synke baner i bakgrunnen:', err);
+    });
+  }, []);
+
+  if (!isCloudConfigured()) return <ConfigMissingScreen />
   return (
     <UiProvider>
       <LocationProvider>
