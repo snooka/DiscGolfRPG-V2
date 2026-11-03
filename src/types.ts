@@ -41,13 +41,16 @@ export interface CourseItem {
   location: string;
   holes: number;
   par: number;
-  totalLengthMeters?: number;
-  image: string;
+  is_verified?: boolean;
+  isCustom?: boolean;
+  image?: string;
   lat: number;
   lng: number;
-  layout?: CourseHole[];
-  isCustom?: boolean;
-  updatedAt?: string;
+  layout?: Array<{
+    number: number;
+    par: number;
+    distance?: number;
+  }>;
 }
 
 // ---------- Diskbag ----------
